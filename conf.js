@@ -1,6 +1,6 @@
 // An example configuration file.
 exports.config = {
-  directConnect: true,
+  directConnect: false,
 
   // Capabilities to be passed to the webdriver instance.
   capabilities: {
@@ -15,12 +15,7 @@ exports.config = {
   specs: ['example_spec.js'],
 
   onPrepare: function() {
-      var jasmineReporters = require('jasmine-reporters');
-      jasmine.getEnv().addReporter(new jasmineReporters.JUnitXmlReporter({
-          consolidateAll: true,
-          savePath: 'testresults',
-          filePrefix: 'xmloutput'
-      }));
+       
   },
   // Options to be passed to Jasmine.
   jasmineNodeOpts: {
